@@ -39,7 +39,9 @@ function GameRound() {
         setPlayers(prev => prev.map(p => ({ ...p, isAlive: true })));
         setLoading(true);
         try {
-            const response = await axios.post('/play-round', {
+            const backendUrl = `${import.meta.env.VITE_BACKEND_URL}/play-round`;
+
+            const response = await axios.post(backendUrl, {
                 scenario,
                 players
             });
