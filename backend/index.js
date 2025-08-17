@@ -8,6 +8,18 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+import path from 'path';
+
+
+// Serve frontend's static files
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// Handle SPA routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+});
+
+
 
 const client = new GoogleGenAI({
     apiKey: process.env.GOOGLE_API_KEY, // API key
