@@ -39,7 +39,7 @@ function GameRound() {
         setPlayers(prev => prev.map(p => ({ ...p, isAlive: true })));
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost:4000/play-round', {
+            const response = await axios.post('http://prompt-to-survive-backend.onrender.com/play-round', {
                 scenario,
                 players
             });
