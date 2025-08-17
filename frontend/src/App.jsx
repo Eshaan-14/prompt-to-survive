@@ -34,7 +34,12 @@ function App() {
             count is {count}
           </button>
         </div>
-
+        <section className="mb-4 p-4 bg-gray-800 rounded">
+        <h2 className="text-yellow-400 font-semibold mb-2">How to Play</h2>
+        <p className="text-sm text-gray-300">
+          Enter a scenario and add players with their strategies. Then hit "Play Round" to see how your players survive the scenario, narrated by the AI game master. Have fun!
+        </p>
+      </section>
         <GameRound />
       </main>
     </div>
