@@ -14,13 +14,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Serve frontend build
+app.use(express.static(path.resolve(__dirname, '../frontend/dist')));
 
-// Serve frontend's static files
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
-
-// Handle SPA routing
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+// Handle React routes safely
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'));
 });
 
 
