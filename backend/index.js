@@ -18,6 +18,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.resolve(__dirname, '../frontend/dist')));
 
 // Handle React routes safely
+console.log('Registering catch-all route');
 app.get(/^\/.*$/, (req, res) => {
   res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'));
 });
@@ -27,7 +28,7 @@ app.get(/^\/.*$/, (req, res) => {
 const client = new GoogleGenAI({
     apiKey: process.env.GOOGLE_API_KEY, // API key
 });
-
+console.log('Registering /play-round route');
 app.post('/play-round', async (req, res) => {
     try {
         const {scenario, players} = req.body;
