@@ -23,8 +23,8 @@ Players submit their strategies, and the AI decides who survives each round with
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/death-by-ai.git
-   cd death-by-ai
+   git clone https://github.com/eshaan-14/prompt-to-survive.git
+   cd prompt-to-survive
 ````
 
 2. **Install dependencies:**
